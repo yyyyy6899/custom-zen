@@ -1,0 +1,10 @@
+docker pull ghcr.io/<your-username>/zen-custom:latest
+
+docker run -d \
+  --name=zen \
+  -p 127.0.0.1:4000:3000 \
+  -p 127.0.0.1:4001:3001 \
+  -v /path/to/config:/config \
+  --shm-size="1gb" \
+  --restart unless-stopped \
+  ghcr.io/<your-username>/zen-custom:latest
